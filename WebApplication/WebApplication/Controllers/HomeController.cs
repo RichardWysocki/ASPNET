@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Configuration;
 using System.Web.Mvc;
+using ClassLibrary;
 
 namespace WebApplication.Controllers
 {
@@ -10,6 +9,14 @@ namespace WebApplication.Controllers
     {
         public ActionResult Index()
         {
+
+            var x = new CustomerDataAccess();
+            var y = x.ReadData<Customer>();
+
+
+            ViewBag.Environment = ConfigurationManager.AppSettings["Environment"];
+            ViewBag.Region = ConfigurationManager.AppSettings["Region"];
+            ViewBag.MachineName = Environment.MachineName;
             return View();
         }
 

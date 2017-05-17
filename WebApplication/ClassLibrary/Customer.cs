@@ -10,11 +10,19 @@
             _firstName = firstName;
             _lastName = lastName;
         }
+        public Customer()
+        {
+        }
+
 
         public string Name()
         {
             return _firstName + ", "+ _lastName;
         }
+
+        public int CustomerID { get; set; }
+        public string FirstName { get; set; }       
+        public string LastName { get; set; }
 
     }
 }
