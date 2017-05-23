@@ -11,10 +11,10 @@ namespace WebApplication.Controllers
         {
 
             var x = new CustomerDataAccess();
-            var y = x.ReadData<Customer>();
+            var y = x.ReadData<Customer>("Customer_List");
 
 
-            ViewBag.Environment = ConfigurationManager.AppSettings["Environment"];
+             ViewBag.Environment = ConfigurationManager.AppSettings["Environment"];
             ViewBag.Region = ConfigurationManager.AppSettings["Region"];
             ViewBag.MachineName = Environment.MachineName;
             return View();
